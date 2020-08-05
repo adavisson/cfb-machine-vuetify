@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex-md about">
-    <h1 class="text-h1 title">About</h1>
+    <h1 class="text-h1 header">About</h1>
     <div class="content">
       <p>This is an about page</p>
     </div>
@@ -18,8 +18,10 @@ export default {
   .about {
     flex-direction: column;
   }
-  .title {
+  .header {
     text-align: center;
+    padding-bottom: .5em;
+    padding-top: .2em;
   }
   .content {
     width: 80%;
