@@ -22,6 +22,7 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+      <v-btn @click="toggleTheme">{{ buttonnText }}</v-btn>
     </v-navigation-drawer>
     <v-app-bar app color="primary" dark collapse-on-scroll="true">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
@@ -36,6 +37,16 @@ export default {
   data: () => ({
     drawer: false,
   }),
+  computed: {
+    buttonnText() {
+      return !this.$vuetify.theme.dark ? 'Use Dark Theme' : 'Use Light Theme'
+    }
+  },
+  methods: {
+    toggleTheme() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark
+    }
+  }
 }
 </script>
 
