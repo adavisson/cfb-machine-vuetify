@@ -1,6 +1,6 @@
 <template>
-  <div class="d-flex-md container">
-    <h1 class="text-h1">Home</h1>
+  <div class="d-flex-md home">
+    <h1 class="text-h1 title">Home</h1>
     <div class="content">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent gravida metus non placerat posuere. Fusce quis erat massa. Donec augue massa, pharetra non felis et, rhoncus aliquet ligula. Nam ut dui massa. Quisque pellentesque sapien id massa pellentesque mattis quis in velit. Nunc blandit lectus quis quam commodo, in blandit metus molestie. Phasellus ultrices nibh et nunc aliquam, sed commodo justo lobortis. Aenean in diam id tellus iaculis condimentum in sed lacus. Aenean condimentum nunc nunc, nec pulvinar purus posuere et. Quisque luctus turpis ac ullamcorper venenatis. Phasellus et ex venenatis, venenatis nisi eget, porttitor dui. Suspendisse ultricies diam id sapien accumsan tempor.</p>
       <p>Morbi tristique lorem ac lectus suscipit interdum iaculis eu purus. Duis malesuada elementum justo, ut ornare mauris suscipit a. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer vitae congue sapien, non mattis elit. Vivamus pellentesque dolor vel turpis interdum pulvinar. Sed quis magna eget tellus commodo pharetra. Mauris elementum accumsan augue et lobortis.</p>
@@ -20,11 +20,17 @@ export default {
 </script>
 
 <style scoped>
-  .container {
+  .home {
     flex-direction: column;
+    align-items: center;
+    margin: auto;
+  }
+  .title {
+    text-align: center;
   }
   .content {
     width: 80%;
     margin: auto;
+    text-align: justify;
   }
 </style>
