@@ -8,14 +8,12 @@
 </template>
 
 <script>
-// import Home from "./views/Home";
 import AppBar from "./components/AppBar";
 
 export default {
   name: "App",
 
   components: {
-    // Home,
     AppBar,
   },
 
