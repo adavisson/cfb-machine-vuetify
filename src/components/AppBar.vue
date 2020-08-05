@@ -2,11 +2,11 @@
   <div id="navigation">
     <v-navigation-drawer
       v-model="drawer"
-      overlay-opacity="false"
+      overlay-opacity="true"
       app
     >
       <v-list color="primary" dense>
-        <v-list-item link :to="{path: '/'}" >
+        <v-list-item :key="home" link :to="{path: '/'}" >
           <v-list-item-action>
             <v-icon>mdi-home</v-icon>
           </v-list-item-action>
@@ -14,7 +14,7 @@
             <v-list-item-title>Home</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link :to="{path: '/about'}">
+        <v-list-item :key="about" link :to="{path: '/about'}">
           <v-list-item-action>
             <v-icon>mdi-information-outline</v-icon>
           </v-list-item-action>
@@ -36,7 +36,7 @@
 export default {
   name: 'AppBar',
   data: () => ({
-    drawer: null,
+    drawer: false,
   }),
   computed: {
     buttonnText() {
