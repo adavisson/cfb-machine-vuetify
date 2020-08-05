@@ -5,7 +5,7 @@
       app
     >
     </v-navigation-drawer>
-    <v-app-bar app color="green" dark>
+    <v-app-bar app color="green" dark collapse-on-scroll="true">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>CFB Machine</v-toolbar-title>
     </v-app-bar>
