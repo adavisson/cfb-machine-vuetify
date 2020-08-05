@@ -2,6 +2,7 @@
   <div id="navigation">
     <v-navigation-drawer
       v-model="drawer"
+      overlay-opacity="false"
       app
     >
       <v-list color="primary" dense>
