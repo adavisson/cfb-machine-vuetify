@@ -2,7 +2,7 @@
   <div class="d-flex-md about">
     <h1 class="text-md-h1 header">About</h1>
     <div class="content">
-      <p>This is an about page</p>
+      <p>This page is pulling all data from <a href="https://api.collegefootballdata.com/">api.collegefootballdata.com/</a>.</p>
     </div>
   </div>
 </template>
