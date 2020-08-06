@@ -1,5 +1,5 @@
 <template>
-  <v-form class="form">
+  <v-form @submit.prevent="handleSubmit" class="form" id="match-history-form">
     <v-select
       :items="teams"
       item-text="school"
@@ -18,7 +18,7 @@
       v-model="secondTeam"
       dense
     ></v-select>
-    <v-btn color="secondary">Submit</v-btn>
+    <v-btn type="submit" color="secondary" form="match-history-form">Submit</v-btn>
   </v-form>
 </template>
 
@@ -26,18 +26,13 @@
 export default {
   name: "MatchForm",
   data: () => ({
-    teams: [],
-    firstTeam: "",
-    secondTeam: ""
   }),
-  beforeMount() {
-    this.fetchData()
-  },
+  props: ['teams', 'firstTeam', 'secondTeam', 'submitted' ],
   methods: {
-    async fetchData() {
-      const result = await fetch('https://api.collegefootballdata.com/teams/fbs');
-      const data = await result.json();
-      this.teams = data;
+    handleSubmit(e) {
+      e.preventDefault
+      this.submitted = !this.submitted
+      console.log("hey")
     }
   }
 }
