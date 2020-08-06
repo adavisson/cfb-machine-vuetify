@@ -1,5 +1,5 @@
 <template>
-  <v-form @submit.prevent="handleSubmit" class="form" id="match-history-form">
+  <v-form @submit.prevent="submitForm" class="form" id="match-history-form">
     <v-select
       :items="teams"
       item-text="school"
@@ -27,12 +27,10 @@ export default {
   name: "MatchForm",
   data: () => ({
   }),
-  props: ['teams', 'firstTeam', 'secondTeam', 'submitted' ],
+  props: ['teams', 'firstTeam', 'secondTeam', 'handleSubmit' ],
   methods: {
-    handleSubmit(e) {
-      e.preventDefault
-      this.submitted = !this.submitted
-      console.log("hey")
+    submitForm() {
+      this.$emit("handleSubmit")
     }
   }
 }
