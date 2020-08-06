@@ -6,20 +6,12 @@
       app
     >
       <v-list color="primary" dense>
-        <v-list-item :key="home" link :to="{path: '/'}" >
+        <v-list-item v-for="item in items" :key="item.title" link :to="item.href">
           <v-list-item-action>
-            <v-icon>mdi-home</v-icon>
+            <v-icon>{{item.icon}}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Home</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item :key="about" link :to="{path: '/about'}">
-          <v-list-item-action>
-            <v-icon>mdi-information-outline</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>About</v-list-item-title>
+            <v-list-item-title>{{item.title}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -39,6 +31,11 @@ export default {
   name: 'AppBar',
   data: () => ({
     drawer: false,
+    items: [
+      { title: "Home", icon: "mdi-home", href: "/" },
+      { title: "Match History", icon: "mdi-football-helmet", href: "/match-history" },
+      { title: "About", icon: "mdi-information-outline", href: "/about" }
+    ]
   }),
   computed: {
     buttonText() {
