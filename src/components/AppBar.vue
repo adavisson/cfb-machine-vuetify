@@ -2,7 +2,7 @@
   <div id="navigation">
     <v-navigation-drawer
       v-model="drawer"
-      overlay-opacity="true"
+      overlay-opacity={true}
       app
     >
       <v-list color="primary" dense>
@@ -25,7 +25,7 @@
       </v-list>
       <br/>
     </v-navigation-drawer>
-    <v-app-bar app color="primary" dark collapse-on-scroll="true" elevation="5">
+    <v-app-bar app color="primary" dark collapse-on-scroll elevation="5">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>CFB Machine</v-toolbar-title>
       <v-spacer></v-spacer>
