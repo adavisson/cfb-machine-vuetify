@@ -1,12 +1,18 @@
 <template>
   <div class="d-flex-md match-history">
     <h1 class="text-md-h1 header">Match History</h1>
+    <MatchForm />
   </div>
 </template>
 
 <script>
+import MatchForm from "../components/MatchForm"
+
 export default {
   name: 'MatchHistory',
+  components: {
+    MatchForm,
+  },
   data:() => ({}),
 }
 </script>
