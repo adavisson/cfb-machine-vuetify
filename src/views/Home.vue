@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex-md home">
-    <h1 class="text-h1 header">CFB Machine</h1>
+    <h1 class="text-md-h1 header">CFB Machine</h1>
     <div class="content">
       <p>Welcome to the CFB Machine. Explore this site to find historical college football stats.</p>
     </div>
@@ -10,7 +10,7 @@
 <script>
 export default {
   name: "Home",
-  data() {}
+  data:() => ({})
 };
 </script>
 

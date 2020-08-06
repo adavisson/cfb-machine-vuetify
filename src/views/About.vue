@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex-md about">
-    <h1 class="text-h1 header">About</h1>
+    <h1 class="text-md-h1 header">About</h1>
     <div class="content">
       <p>This is an about page</p>
     </div>
@@ -9,24 +9,24 @@
 
 <script>
 export default {
-  name: 'About',
-  data() {},
-}
+  name: "About",
+  data: () => ({})
+};
 </script>
 
 <style scoped>
-  .about {
-    flex-direction: column;
-  }
-  .header {
-    text-align: center;
-    padding-bottom: .5em;
-    padding-top: .2em;
-  }
-  .content {
-    width: 80%;
-    margin: auto;
-    text-align: center;
-  }
+.about {
+  flex-direction: column;
+}
+.header {
+  text-align: center;
+  padding-bottom: 0.5em;
+  padding-top: 0.2em;
+}
+.content {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
 </style>
 
