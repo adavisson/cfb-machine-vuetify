@@ -1,18 +1,20 @@
 <template>
   <div class="d-flex-md match-history">
     <h1 class="text-md-h1 header">Match History</h1>
-    <MatchForm v-if="!submitted" :submitted=submitted :teams="teams" :firstTeam="firstTeam" :secondTeam="secondTeam" />
-    <p v-else>Hey</p>
+    <MatchForm v-if="!submitted" @handleSubmit="handleSubmit" :teams="teams" :firstTeam="firstTeam" :secondTeam="secondTeam" />
+    <MatchResults v-else @handleSubmit="handleSubmit" />
   </div>
 </template>
 
 <script>
 import MatchForm from "../components/MatchForm"
+import MatchResults from "../components/MatchResults"
 
 export default {
   name: 'MatchHistory',
   components: {
     MatchForm,
+    MatchResults
   },
   data:() => ({
     teams: [],
@@ -29,9 +31,7 @@ export default {
       const data = await result.json();
       this.teams = data;
     },
-    handleSubmit(e) {
-      e.preventDefault()
-      console.log('hey')
+    handleSubmit() {
       this.submitted = !this.submitted
     }
   }
