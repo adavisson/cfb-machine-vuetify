@@ -23,11 +23,13 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-      <v-btn @click="toggleTheme">{{ buttonnText }}</v-btn>
+      <br/>
     </v-navigation-drawer>
-    <v-app-bar app color="primary" dark collapse-on-scroll="true">
+    <v-app-bar app color="primary" dark collapse-on-scroll="true" elevation="5">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>CFB Machine</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn color="secondary" @click="toggleTheme"><v-icon>{{buttonText}}</v-icon></v-btn>
     </v-app-bar>
   </div>
 </template>
@@ -39,8 +41,8 @@ export default {
     drawer: false,
   }),
   computed: {
-    buttonnText() {
-      return !this.$vuetify.theme.dark ? 'Use Dark Theme' : 'Use Light Theme'
+    buttonText() {
+      return !this.$vuetify.theme.dark ? 'mdi-moon-waning-crescent' : 'mdi-white-balance-sunny'
     }
   },
   methods: {
