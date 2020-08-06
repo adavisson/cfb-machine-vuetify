@@ -4,15 +4,17 @@
       :items="teams"
       label="Team 1"
       color="secondary"
+      v-model="firstTeam"
       dense
     ></v-select>
     <v-select
       :items="teams"
       label="Team 2"
       color="secondary"
+      v-model="secondTeam"
       dense
     ></v-select>
-    <p>{{firstTeam}}</p>
+    <v-btn color="secondary">Submit</v-btn>
   </v-form>
 </template>
 
