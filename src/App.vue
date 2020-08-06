@@ -12,17 +12,12 @@ import AppBar from "./components/AppBar";
 
 export default {
   name: "App",
-
   components: {
-    AppBar,
+    AppBar
   },
-
-  data: () => ({
-    //
-  })
+  data: () => ({})
 };
 </script>
 
 <style scoped>
-
 </style>
