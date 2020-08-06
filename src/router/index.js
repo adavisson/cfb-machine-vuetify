@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import About from "../views/About.vue";
 import MatchHistory from "../views/MatchHistory.vue"
 import TeamStats from "../views/TeamStats.vue"
+import Roster from "../views/Roster.vue"
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
     path: "/team-stats",
     name: "Team Stats",
     component: TeamStats
+  },
+  {
+    path: "/roster",
+    name: "Roster",
+    component: Roster
   }
 ];
 

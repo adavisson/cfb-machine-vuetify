@@ -35,6 +35,7 @@ export default {
       { title: "Home", icon: "mdi-home", href: "/" },
       { title: "Match History", icon: "mdi-football-helmet", href: "/match-history" },
       { title: "Team Statistics", icon: "mdi-clipboard-text", href: "/team-stats"},
+      { title: "Roster", icon: "mdi-account-group", href: "/roster"},
       { title: "About", icon: "mdi-information-outline", href: "/about" }
     ]
   }),
