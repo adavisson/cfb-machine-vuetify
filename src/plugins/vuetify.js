@@ -9,11 +9,11 @@ export default new Vuetify({
     themes: {
       light: {
         primary: colors.lightGreen.base,
-        secondary: colors.orange.base,
+        secondary: colors.lightBlue.base,
       },
       dark: {
         primary: colors.lightGreen.base,
-        secondary: colors.orange.base,
+        secondary: colors.lightBlue.base,
       }
     },
     dark: true,
