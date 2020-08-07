@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex-md team-stats">
     <h1 class="text-md-h1 header">Team Statistics</h1>
-    <TeamStatsForm v-if="!submitted" />
+    <TeamStatsForm v-if="!submitted" :teams="teams" />
     <TeamStatsResults v-else />
   </div>
 </template>
