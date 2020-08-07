@@ -25,14 +25,16 @@
 <script>
 export default {
   name: "TeamStatsForm",
-  props: ['teams', 'handleSubmit'],
+  props: ['teams', 'handleSubmit', 'year', 'team'],
   data: () => ({
     selectedTeam: "",
     years: [],
-    year: ""
+    selectedYear: ""
   }),
   beforeMount() {
     this.fillYears()
+    this.selectedYear = this.year
+    this.selectedTeam = this.team
   },
   methods: {
     fillYears() {
@@ -41,6 +43,9 @@ export default {
         this.years.push({ text: thisYear, value: thisYear })
         thisYear--
       }
+    },
+    submitForm() {
+      this.$emit("handleSubmit", this.selectedTeam, this.selectedYear)
     }
   }
 }
