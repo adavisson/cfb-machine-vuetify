@@ -15,7 +15,7 @@
       item-value="value"
       label="Year"
       color="secondary"
-      v-model="year"
+      v-model="selectedYear"
       dense
     ></v-select>
     <v-btn type="submit" color="secondary" form="team-stats-form">Submit</v-btn>
@@ -29,7 +29,7 @@ export default {
   data: () => ({
     selectedTeam: "",
     years: [],
-    selectedYear: ""
+    selectedYear: 0
   }),
   beforeMount() {
     this.fillYears()

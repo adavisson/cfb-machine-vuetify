@@ -2,7 +2,7 @@
   <div class="d-flex-md team-stats">
     <h1 class="text-md-h1 header">Team Statistics</h1>
     <TeamStatsForm v-if="!submitted" @handleSubmit="handleSubmit" :teams="teams" :team="team" :year="year" />
-    <TeamStatsResults v-else />
+    <TeamStatsResults v-else @handleSubmit="handleSubmit" :team="team" :year="year" />
   </div>
 </template>
 
