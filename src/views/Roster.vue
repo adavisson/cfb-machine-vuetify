@@ -1,8 +1,8 @@
 <template>
   <div class="d-flex-md roster">
-    <h1 class="text-md-h1 header">Roster</h1>
-    <RosterForm v-if="!submitted" :teams="teams" />
-    <RosterResults v-else />
+    <h1 class="text-md-h1 header">Rosters</h1>
+    <RosterForm v-if="!submitted" :teams="teams" @handleSubmit="handleSubmit" :team="team"/>
+    <RosterResults v-else @handleSubmit="handleSubmit" :team="team" />
   </div>
 </template>
 
@@ -18,7 +18,8 @@ export default {
   },
   data: () => ({
     submitted: false,
-    teams: []
+    teams: [],
+    team: ""
   }),
   beforeMount() {
     this.fetchData()
@@ -33,6 +34,10 @@ export default {
         console.log(e)
       }
     },
+    handleSubmit(selectedTeam) {
+      this.team = selectedTeam
+      this.submitted = !this.submitted
+    }
   }
 };
 </script>

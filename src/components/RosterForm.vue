@@ -6,7 +6,7 @@
       item-value="school"
       label="Team"
       color="secondary"
-      v-model="team"
+      v-model="selectedTeam"
       dense
     ></v-select>
     <v-btn type="submit" color="secondary" form="roster-form">Submit</v-btn>
@@ -17,9 +17,17 @@
 export default {
   name: "RosterForm",
   data: () => ({
-    team: ""
+    selectedTeam: ""
   }),
-  props: ["teams"]
+  props: ["teams", "handleSubmit", "team"],
+  beforeMount() {
+    this.selectedTeam = this.team
+  },
+  methods: {
+    submitForm() {
+      this.$emit("handleSubmit", this.selectedTeam)
+    }
+  }
 }
 </script>
 
