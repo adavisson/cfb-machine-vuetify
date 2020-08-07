@@ -1,16 +1,16 @@
 <template>
   <div class="matchup-results">
     <v-btn class="button" color="secondary" @click="handleClick">Pick Different Teams</v-btn>
-    <h3 class="text-md-h3 header">Wins for {{ matchup.team1 }}: {{ matchup.team1Wins }}</h3>
-    <h3 class="text-md-h3 header">Wins for {{ matchup.team2 }}: {{ matchup.team2Wins }}</h3>
-    <h3 class="text-md-h3 header">Ties: {{ matchup.ties }}</h3>
+    <h5 class="text-md-h5 header">Wins for {{ matchup.team1 }}: {{ matchup.team1Wins }}</h5>
+    <h5 class="text-md-h5 header">Wins for {{ matchup.team2 }}: {{ matchup.team2Wins }}</h5>
+    <h5 class="text-md-h5 header">Ties: {{ matchup.ties }}</h5>
     <div class="content">
       <v-card v-for="game in matchup.games" :key="game.season" class="card">
         <v-card-title class="headline">{{ game.season }}</v-card-title>
         <v-card-text>
-          <p>Winner: {{game.winner}}</p>
-          <p>Score: {{ game.awayTeam }} {{ game.awayScore }} - {{ game.homeScore }} {{ game.homeTeam }}</p>
-          <p>Venue: {{ game.venue ? game.venue : 'N/A' }}</p>
+          <p><strong>Winner</strong>: {{game.winner}}</p>
+          <p><strong>Score</strong>: {{ game.awayTeam }} {{ game.awayScore }} - {{ game.homeScore }} {{ game.homeTeam }}</p>
+          <p><strong>Venue</strong>: {{ game.venue ? game.venue : 'N/A' }}</p>
         </v-card-text>
       </v-card>
     </div>
