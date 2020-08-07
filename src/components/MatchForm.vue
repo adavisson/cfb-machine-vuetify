@@ -3,7 +3,7 @@
     <v-select
       :items="teams"
       item-text="school"
-      item-value="id"
+      item-value="school"
       label="Team 1"
       color="secondary"
       v-model="firstTeam"
@@ -12,7 +12,7 @@
     <v-select
       :items="teams"
       item-text="school"
-      item-value="id"
+      item-value="school"
       label="Team 2"
       color="secondary"
       v-model="secondTeam"

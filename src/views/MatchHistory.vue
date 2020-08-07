@@ -27,9 +27,13 @@ export default {
   },
   methods: {
     async fetchData() {
-      const result = await fetch('https://api.collegefootballdata.com/teams/fbs');
-      const data = await result.json();
-      this.teams = data;
+      try {
+        const result = await fetch('https://api.collegefootballdata.com/teams/fbs');
+        const data = await result.json();
+        this.teams = data;
+      } catch (e) {
+        console.log(e)
+      }
     },
     handleSubmit(teamOne, teamTwo) {
       this.firstTeam = teamOne
