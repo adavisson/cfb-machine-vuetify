@@ -3,7 +3,7 @@
     <p>Results</p>
     <p>{{ firstTeam }}</p>
     <p>{{ secondTeam }}</p>
-    
+
     <v-btn color="secondary" @click="handleClick">Pick Different Teams</v-btn>
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     handleClick() {
-      this.$emit("handleSubmit");
+      this.$emit("handleSubmit", this.firstTeam, this.secondTeam);
     },
     async fetchData() {
       try {

@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex-md match-history">
     <h1 class="text-md-h1 header">Match History</h1>
-    <MatchForm v-if="!submitted" @handleSubmit="handleSubmit" :teams="teams" />
+    <MatchForm v-if="!submitted" @handleSubmit="handleSubmit" :teams="teams" :firstTeam="firstTeam" :secondTeam="secondTeam" />
     <MatchResults v-else @handleSubmit="handleSubmit" :firstTeam="firstTeam" :secondTeam="secondTeam" />
   </div>
 </template>

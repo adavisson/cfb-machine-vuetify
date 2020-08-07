@@ -6,7 +6,7 @@
       item-value="school"
       label="Team 1"
       color="secondary"
-      v-model="firstTeam"
+      v-model="teamOne"
       dense
     ></v-select>
     <v-select
@@ -15,7 +15,7 @@
       item-value="school"
       label="Team 2"
       color="secondary"
-      v-model="secondTeam"
+      v-model="teamTwo"
       dense
     ></v-select>
     <v-btn type="submit" color="secondary" form="match-history-form">Submit</v-btn>
@@ -26,21 +26,25 @@
 export default {
   name: "MatchForm",
   data: () => ({
-    firstTeam: "",
-    secondTeam: ""
+    teamOne: "",
+    teamTwo: ""
   }),
-  props: ['teams', 'handleSubmit' ],
+  props: ["teams", "handleSubmit", "firstTeam", "secondTeam"],
+  beforeMount() {
+    this.teamOne = this.firstTeam
+    this.teamTwo = this.secondTeam
+  },
   methods: {
     submitForm() {
-      this.$emit("handleSubmit", this.firstTeam, this.secondTeam)
+      this.$emit("handleSubmit", this.teamOne, this.teamTwo);
     }
   }
-}
+};
 </script>
 
 <style scoped>
-  .form {
-    width: 60%;
-    margin: auto;
-  }
+.form {
+  width: 60%;
+  margin: auto;
+}
 </style>
