@@ -1,8 +1,8 @@
 <template>
   <div class="d-flex-md match-history">
     <h1 class="text-md-h1 header">Match History</h1>
-    <MatchForm v-if="!submitted" @handleSubmit="handleSubmit" :teams="teams" :firstTeam="firstTeam" :secondTeam="secondTeam" />
-    <MatchResults v-else @handleSubmit="handleSubmit" />
+    <MatchForm v-if="!submitted" @handleSubmit="handleSubmit" :teams="teams" />
+    <MatchResults v-else @handleSubmit="handleSubmit" :firstTeam="firstTeam" :secondTeam="secondTeam" />
   </div>
 </template>
 
@@ -31,7 +31,9 @@ export default {
       const data = await result.json();
       this.teams = data;
     },
-    handleSubmit() {
+    handleSubmit(teamOne, teamTwo) {
+      this.firstTeam = teamOne
+      this.secondTeam = teamTwo
       this.submitted = !this.submitted
     }
   }

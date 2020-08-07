@@ -26,11 +26,13 @@
 export default {
   name: "MatchForm",
   data: () => ({
+    firstTeam: "",
+    secondTeam: ""
   }),
-  props: ['teams', 'firstTeam', 'secondTeam', 'handleSubmit' ],
+  props: ['teams', 'handleSubmit' ],
   methods: {
     submitForm() {
-      this.$emit("handleSubmit")
+      this.$emit("handleSubmit", this.firstTeam, this.secondTeam)
     }
   }
 }
