@@ -16,6 +16,6 @@ export default new Vuetify({
         secondary: colors.lightBlue.base
       }
     },
-    dark: false
+    dark: true
   }
 });
