@@ -3,6 +3,7 @@
     <h1 class="text-md-h1 header">CFB Machine</h1>
     <div class="content">
       <p>Welcome to the CFB Machine. Explore this site to find historical college football stats.</p>
+      <v-img src="https://media.giphy.com/media/eKlzZj8vDZOxNNjbVr/giphy.gif" contain max-width={200}></v-img>
     </div>
   </div>
 </template>
@@ -26,8 +27,11 @@ export default {
     padding-top: .2em;
   }
   .content {
-    width: 80%;
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
     margin: auto;
     text-align: center;
+    align-items: center;
   }
 </style>
