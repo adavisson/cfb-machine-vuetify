@@ -14,6 +14,14 @@
             <v-list-item-title>{{item.title}}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        <v-list-item :key="homepage" link href="https://andydavisson.com">
+          <v-list-item-action>
+            <v-icon>mdi-exit-to-app</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>andydavisson.com</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
       <br/>
     </v-navigation-drawer>
@@ -36,7 +44,7 @@ export default {
       { title: "Match History", icon: "mdi-football-helmet", href: "/match-history" },
       { title: "Team Statistics", icon: "mdi-clipboard-text", href: "/team-stats"},
       { title: "Roster", icon: "mdi-account-group", href: "/roster"},
-      { title: "About", icon: "mdi-information-outline", href: "/about" }
+      { title: "About", icon: "mdi-information-outline", href: "/about" },
     ]
   }),
   computed: {
