@@ -8,7 +8,7 @@
         pulled from
         <a href="https://api.collegefootballdata.com"
           >https://api.collegefootballdata.com</a
-        >. This app is built using Vue/Vuetify.
+        >. This app is built using Vue/Vuetify. View the source code <a href="https://github.com/adavisson/cfb-machine-vuetify">here</a>.
       </p>
     </div>
   </div>
@@ -33,6 +33,6 @@ export default {
 .content {
   width: 80%;
   margin: auto;
-  text-align: center;
+  text-align: justify;
 }
 </style>
