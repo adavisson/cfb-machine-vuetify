@@ -1,6 +1,8 @@
 <template>
   <div class="roster-results">
-    <v-btn class="button" color="secondary" @click="handleClick">Pick Another Team</v-btn>
+    <v-btn class="button" color="secondary" @click="handleClick"
+      >Pick Another Team</v-btn
+    >
     <h5 class="text-md-h5 header">{{ team }} Roster</h5>
     <v-simple-table>
       <template v-slot:default>
@@ -17,7 +19,10 @@
         <tbody>
           <tr v-for="player in roster" :key="player.id">
             <td>{{ player.jersey }}</td>
-            <td>{{ player.first_name }} {{ player.last_name }} - {{ getYear(player.year) }}</td>
+            <td>
+              {{ player.first_name }} {{ player.last_name }} -
+              {{ getYear(player.year) }}
+            </td>
             <td>{{ player.position }}</td>
             <td>{{ getHeight(player.height) }}</td>
             <td>{{ player.weight }} lbs.</td>
@@ -70,9 +75,9 @@ export default {
       }
     },
     getHeight(height) {
-      const feet = height / 12
-      const inches = height % 12
-      return `${Math.floor(feet)}' ${inches}"`
+      const feet = height / 12;
+      const inches = height % 12;
+      return `${Math.floor(feet)}' ${inches}"`;
     }
   }
 };

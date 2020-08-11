@@ -21,19 +21,19 @@ export default {
   }),
   props: ["teams", "handleSubmit", "team"],
   beforeMount() {
-    this.selectedTeam = this.team
+    this.selectedTeam = this.team;
   },
   methods: {
     submitForm() {
-      this.$emit("handleSubmit", this.selectedTeam)
+      this.$emit("handleSubmit", this.selectedTeam);
     }
   }
-}
+};
 </script>
 
 <style scoped>
-  .form {
-    width: 60%;
-    margin: auto;
-  }
+.form {
+  width: 60%;
+  margin: auto;
+}
 </style>

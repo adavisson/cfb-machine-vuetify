@@ -18,7 +18,9 @@
       v-model="teamTwo"
       dense
     ></v-select>
-    <v-btn type="submit" color="secondary" form="match-history-form">Submit</v-btn>
+    <v-btn type="submit" color="secondary" form="match-history-form"
+      >Submit</v-btn
+    >
   </v-form>
 </template>
 
@@ -31,8 +33,8 @@ export default {
   }),
   props: ["teams", "handleSubmit", "firstTeam", "secondTeam"],
   beforeMount() {
-    this.teamOne = this.firstTeam
-    this.teamTwo = this.secondTeam
+    this.teamOne = this.firstTeam;
+    this.teamTwo = this.secondTeam;
   },
   methods: {
     submitForm() {

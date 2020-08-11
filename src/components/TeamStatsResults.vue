@@ -1,6 +1,8 @@
 <template>
   <div class="team-stats-results">
-    <v-btn class="button" @click="handleClick" color="secondary">Change Team/Year</v-btn>
+    <v-btn class="button" @click="handleClick" color="secondary"
+      >Change Team/Year</v-btn
+    >
     <h5 class="text-md-h5 header">{{ team }} Statistics for {{ year }}</h5>
     <v-simple-table class="table">
       <template v-slot:default>
@@ -29,24 +31,26 @@ export default {
     stats: []
   }),
   beforeMount() {
-    this.fetchData()
+    this.fetchData();
   },
   methods: {
     async fetchData() {
       try {
-        const result = await fetch(`https://api.collegefootballdata.com/stats/season?year=${this.year}&team=${this.team}`)
+        const result = await fetch(
+          `https://api.collegefootballdata.com/stats/season?year=${this.year}&team=${this.team}`
+        );
         const data = await result.json();
-        this.stats = data
-        console.log(this.stats)
-      } catch(e) {
-        console.log(e)
+        this.stats = data;
+        console.log(this.stats);
+      } catch (e) {
+        console.log(e);
       }
     },
     handleClick() {
       this.$emit("handleSubmit", this.team, this.year);
     },
     convertCase(string) {
-      const result = string.replace( /([A-Z])/g, " $1" );
+      const result = string.replace(/([A-Z])/g, " $1");
       return result.charAt(0).toUpperCase() + result.slice(1);
     }
   }
@@ -54,23 +58,23 @@ export default {
 </script>
 
 <style scoped>
-  .team-stats-results {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 1em;
-  }
-  .button {
-    align-self: center;
-    margin-bottom: 1em;
-  }
-  .header {
-    text-align: center;
-    padding-bottom: 0.5em;
-    padding-top: 0.2em;
-  }
-  .table {
-    max-width: 500px;
-    align-self: center;
-  }
+.team-stats-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1em;
+}
+.button {
+  align-self: center;
+  margin-bottom: 1em;
+}
+.header {
+  text-align: center;
+  padding-bottom: 0.5em;
+  padding-top: 0.2em;
+}
+.table {
+  max-width: 500px;
+  align-self: center;
+}
 </style>
