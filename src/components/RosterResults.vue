@@ -14,6 +14,7 @@
             <th>Height</th>
             <th>Weight</th>
             <th>Home Town</th>
+            <th>Highlights</th>
           </tr>
         </thead>
         <tbody>
@@ -27,6 +28,7 @@
             <td>{{ getHeight(player.height) }}</td>
             <td>{{ player.weight }} lbs.</td>
             <td>{{ player.home_city }}, {{ player.home_state }}</td>
+            <td><v-btn color="secondary" small :href="`https://youtube.com/results?search_query=${player.first_name}+${player.last_name}+football+highlights`" target="_blank">YouTube</v-btn></td>
           </tr>
         </tbody>
       </template>
