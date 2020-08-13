@@ -10,6 +10,8 @@
         src="https://media.giphy.com/media/eKlzZj8vDZOxNNjbVr/giphy.gif"
         contain
         max-width="{200}"
+        alt="clemson football player"
+        lazy-src="../assets/cfb-trophy.jpg"
       ></v-img>
     </div>
   </div>
