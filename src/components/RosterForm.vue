@@ -1,5 +1,6 @@
 <template>
   <v-form @submit.prevent="submitForm" class="form" id="roster-form">
+    <p v-if="error" class="error-message">Please fill out the required fields.</p>
     <v-select
       :items="teams"
       item-text="school"
@@ -7,6 +8,7 @@
       label="Team"
       color="secondary"
       v-model="selectedTeam"
+      :error="error ? true : false"
       dense
     ></v-select>
     <v-btn type="submit" color="secondary" form="roster-form">Submit</v-btn>
@@ -17,7 +19,8 @@
 export default {
   name: "RosterForm",
   data: () => ({
-    selectedTeam: ""
+    selectedTeam: "",
+    error: false
   }),
   props: ["teams", "handleSubmit", "team"],
   beforeMount() {
@@ -25,7 +28,11 @@ export default {
   },
   methods: {
     submitForm() {
-      this.$emit("handleSubmit", this.selectedTeam);
+      if ( this.selectedTeam != "" ){
+        this.$emit("handleSubmit", this.selectedTeam);
+      } else {
+        this.error = true
+      }
     }
   }
 };
@@ -35,5 +42,8 @@ export default {
 .form {
   width: 60%;
   margin: auto;
+}
+.error-message {
+  color: red;
 }
 </style>
