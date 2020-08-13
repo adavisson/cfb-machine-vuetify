@@ -1,5 +1,6 @@
 <template>
   <v-form @submit.prevent="submitForm" class="form" id="team-stats-form">
+    <p v-if="teamError || yearError" class="error-message">Please fill out the required fields.</p>
     <v-select
       :items="teams"
       item-text="school"
@@ -8,6 +9,7 @@
       color="secondary"
       v-model="selectedTeam"
       dense
+      :error="teamError ? true : false"
     ></v-select>
     <v-select
       :items="years"
@@ -17,6 +19,7 @@
       color="secondary"
       v-model="selectedYear"
       dense
+      :error="yearError ? true : false"
     ></v-select>
     <v-btn type="submit" color="secondary" form="team-stats-form">Submit</v-btn>
   </v-form>
@@ -29,7 +32,9 @@ export default {
   data: () => ({
     selectedTeam: "",
     years: [],
-    selectedYear: 0
+    selectedYear: 0,
+    teamError: false,
+    yearError: false
   }),
   beforeMount() {
     this.fillYears();
@@ -45,7 +50,16 @@ export default {
       }
     },
     submitForm() {
-      this.$emit("handleSubmit", this.selectedTeam, this.selectedYear);
+      if ( this.selectedTeam != "" && this.selectedYear != ""){
+        this.$emit("handleSubmit", this.selectedTeam, this.selectedYear);
+      } else {
+        if ( this.selectedTeam === "" ) {
+          this.teamError = true
+        }
+        if ( this.selectedYear === "" ) {
+          this.yearError = true
+        }
+      }
     }
   }
 };
@@ -55,5 +69,8 @@ export default {
 .form {
   width: 60%;
   margin: auto;
+}
+.error-message {
+  color: red;
 }
 </style>
