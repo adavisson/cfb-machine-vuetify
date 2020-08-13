@@ -8,7 +8,8 @@
         pulled from
         <a href="https://api.collegefootballdata.com"
           >https://api.collegefootballdata.com</a
-        >. This app is built using Vue/Vuetify. View the source code <a href="https://github.com/adavisson/cfb-machine-vuetify">here</a>.
+        >. This app is built using Vue/Vuetify. View the source code
+        <a href="https://github.com/adavisson/cfb-machine-vuetify">here</a>.
       </p>
     </div>
   </div>

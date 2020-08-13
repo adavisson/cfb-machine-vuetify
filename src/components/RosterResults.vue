@@ -28,7 +28,17 @@
             <td>{{ getHeight(player.height) }}</td>
             <td>{{ player.weight }} lbs.</td>
             <td>{{ player.home_city }}, {{ player.home_state }}</td>
-            <td><v-btn color="secondary" small :href="`https://youtube.com/results?search_query=${player.first_name}+${player.last_name}+football+highlights`" target="_blank">YouTube</v-btn></td>
+            <td>
+              <v-btn
+                color="secondary"
+                small
+                :href="
+                  `https://youtube.com/results?search_query=${player.first_name}+${player.last_name}+football+highlights`
+                "
+                target="_blank"
+                >YouTube</v-btn
+              >
+            </td>
           </tr>
         </tbody>
       </template>
