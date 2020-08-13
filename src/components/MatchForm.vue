@@ -1,5 +1,6 @@
 <template>
   <v-form @submit.prevent="submitForm" class="form" id="match-history-form">
+    <p v-if="error1 || error2" class="error-message">Please fill out required fields</p>
     <v-select
       :items="teams"
       item-text="school"
@@ -8,6 +9,7 @@
       color="secondary"
       v-model="teamOne"
       dense
+      :error="error1 ? true : false"
     ></v-select>
     <v-select
       :items="teams"
@@ -17,6 +19,7 @@
       color="secondary"
       v-model="teamTwo"
       dense
+      :error="error2 ? true : false"
     ></v-select>
     <v-btn type="submit" color="secondary" form="match-history-form"
       >Submit</v-btn
@@ -29,7 +32,9 @@ export default {
   name: "MatchForm",
   data: () => ({
     teamOne: "",
-    teamTwo: ""
+    teamTwo: "",
+    error1: false,
+    error2: false
   }),
   props: ["teams", "handleSubmit", "firstTeam", "secondTeam"],
   beforeMount() {
@@ -38,7 +43,16 @@ export default {
   },
   methods: {
     submitForm() {
-      this.$emit("handleSubmit", this.teamOne, this.teamTwo);
+      if( this.teamOne != "" && this.teamTwo != ""){
+        this.$emit("handleSubmit", this.teamOne, this.teamTwo);
+      } else {
+        if (this.teamOne === ""){
+          this.error1 = true
+        } 
+        if (this.teamTwo === ""){
+          this.error2 = true
+        }
+      }
     }
   }
 };
@@ -48,5 +62,8 @@ export default {
 .form {
   width: 60%;
   margin: auto;
+}
+.error-message {
+  color: red;
 }
 </style>
