@@ -1,6 +1,6 @@
 <template>
   <v-form @submit.prevent="submitForm" class="form" id="match-history-form">
-    <p v-if="error1 || error2" class="error-message">Please fill out required fields</p>
+    <p v-if="error1 || error2" class="error-message">Please fill out the required fields.</p>
     <v-select
       :items="teams"
       item-text="school"
