@@ -26,8 +26,8 @@ export default {
     team: ""
   }),
   computed: {
-    teams () {
-      return this.$store.state.teams
+    teams() {
+      return this.$store.state.teams;
     }
   },
   methods: {

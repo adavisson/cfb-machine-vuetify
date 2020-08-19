@@ -33,8 +33,8 @@ export default {
     year: new Date().getFullYear()
   }),
   computed: {
-    teams () {
-      return this.$store.state.teams
+    teams() {
+      return this.$store.state.teams;
     }
   },
   methods: {

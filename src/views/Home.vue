@@ -37,7 +37,7 @@ export default {
   padding-top: 0.2em;
 }
 .pic {
-  border-radius: .75em;
+  border-radius: 0.75em;
 }
 .content {
   display: flex;

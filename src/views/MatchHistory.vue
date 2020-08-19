@@ -33,8 +33,8 @@ export default {
     submitted: false
   }),
   computed: {
-    teams () {
-      return this.$store.state.teams
+    teams() {
+      return this.$store.state.teams;
     }
   },
   methods: {

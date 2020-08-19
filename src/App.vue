@@ -16,8 +16,8 @@ export default {
     AppBar
   },
   beforeMount() {
-    this.$store.commit('fetchTeams')
-    console.log(this.$store.state.teams)
+    this.$store.commit("fetchTeams");
+    console.log(this.$store.state.teams);
   },
   data: () => ({})
 };

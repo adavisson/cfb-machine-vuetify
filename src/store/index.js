@@ -9,7 +9,7 @@ export default new Vuex.Store({
   },
   mutations: {
     fetchTeams(state) {
-      const fetchData = async() => {
+      const fetchData = async () => {
         try {
           const result = await fetch(
             "https://api.collegefootballdata.com/teams/fbs"
@@ -19,9 +19,9 @@ export default new Vuex.Store({
         } catch (e) {
           console.log(e);
         }
-      }
-      fetchData()
-    },
+      };
+      fetchData();
+    }
   },
   actions: {},
   modules: {}
