@@ -41,7 +41,6 @@ export default {
         );
         const data = await result.json();
         this.stats = data;
-        console.log(this.stats);
       } catch (e) {
         console.log(e);
       }
