@@ -15,7 +15,7 @@
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item :key="homepage" link href="https://andydavisson.com">
+        <v-list-item link href="https://andydavisson.com">
           <v-list-item-action>
             <v-icon>mdi-exit-to-app</v-icon>
           </v-list-item-action>
