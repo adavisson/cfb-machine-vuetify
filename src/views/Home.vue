@@ -7,6 +7,7 @@
         football stats.
       </p>
       <v-img
+        class="pic"
         src="https://media.giphy.com/media/eKlzZj8vDZOxNNjbVr/giphy.gif"
         contain
         max-width="{200}"
@@ -34,6 +35,9 @@ export default {
   text-align: center;
   padding-bottom: 0.5em;
   padding-top: 0.2em;
+}
+.pic {
+  border-radius: .75em;
 }
 .content {
   display: flex;
