@@ -17,7 +17,6 @@ export default {
   },
   beforeMount() {
     this.$store.commit("fetchTeams");
-    console.log(this.$store.state.teams);
   },
   data: () => ({})
 };
