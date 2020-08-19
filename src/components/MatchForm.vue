@@ -1,6 +1,8 @@
 <template>
   <v-form @submit.prevent="submitForm" class="form" id="match-history-form">
-    <p v-if="error1 || error2" class="error-message">Please fill out the required fields.</p>
+    <p v-if="error1 || error2" class="error-message">
+      Please fill out the required fields.
+    </p>
     <v-select
       :items="teams"
       item-text="school"
@@ -43,14 +45,14 @@ export default {
   },
   methods: {
     submitForm() {
-      if( this.teamOne != "" && this.teamTwo != ""){
+      if (this.teamOne != "" && this.teamTwo != "") {
         this.$emit("handleSubmit", this.teamOne, this.teamTwo);
       } else {
-        if (this.teamOne === ""){
-          this.error1 = true
-        } 
-        if (this.teamTwo === ""){
-          this.error2 = true
+        if (this.teamOne === "") {
+          this.error1 = true;
+        }
+        if (this.teamTwo === "") {
+          this.error2 = true;
         }
       }
     }

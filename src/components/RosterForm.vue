@@ -1,6 +1,8 @@
 <template>
   <v-form @submit.prevent="submitForm" class="form" id="roster-form">
-    <p v-if="error" class="error-message">Please fill out the required fields.</p>
+    <p v-if="error" class="error-message">
+      Please fill out the required fields.
+    </p>
     <v-select
       :items="teams"
       item-text="school"
@@ -28,10 +30,10 @@ export default {
   },
   methods: {
     submitForm() {
-      if ( this.selectedTeam != "" ){
+      if (this.selectedTeam != "") {
         this.$emit("handleSubmit", this.selectedTeam);
       } else {
-        this.error = true
+        this.error = true;
       }
     }
   }

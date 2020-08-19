@@ -1,6 +1,8 @@
 <template>
   <v-form @submit.prevent="submitForm" class="form" id="team-stats-form">
-    <p v-if="teamError || yearError" class="error-message">Please fill out the required fields.</p>
+    <p v-if="teamError || yearError" class="error-message">
+      Please fill out the required fields.
+    </p>
     <v-select
       :items="teams"
       item-text="school"
@@ -50,14 +52,14 @@ export default {
       }
     },
     submitForm() {
-      if ( this.selectedTeam != "" && this.selectedYear != ""){
+      if (this.selectedTeam != "" && this.selectedYear != "") {
         this.$emit("handleSubmit", this.selectedTeam, this.selectedYear);
       } else {
-        if ( this.selectedTeam === "" ) {
-          this.teamError = true
+        if (this.selectedTeam === "") {
+          this.teamError = true;
         }
-        if ( this.selectedYear === "" ) {
-          this.yearError = true
+        if (this.selectedYear === "") {
+          this.yearError = true;
         }
       }
     }
