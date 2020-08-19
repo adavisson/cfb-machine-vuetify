@@ -64,7 +64,6 @@ export default {
         );
         const data = await result.json();
         this.roster = data;
-        console.log(this.roster);
       } catch (e) {
         console.log(e);
       }

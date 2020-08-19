@@ -29,25 +29,15 @@ export default {
   },
   data: () => ({
     submitted: false,
-    teams: [],
     team: "",
     year: new Date().getFullYear()
   }),
-  beforeMount() {
-    this.fetchData();
+  computed: {
+    teams() {
+      return this.$store.state.teams;
+    }
   },
   methods: {
-    async fetchData() {
-      try {
-        const result = await fetch(
-          "https://api.collegefootballdata.com/teams/fbs"
-        );
-        const data = await result.json();
-        this.teams = data;
-      } catch (e) {
-        console.log(e);
-      }
-    },
     handleSubmit(selectedTeam, selectedYear) {
       this.team = selectedTeam;
       this.year = selectedYear;
