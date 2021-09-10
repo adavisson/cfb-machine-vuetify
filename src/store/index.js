@@ -12,7 +12,7 @@ export default new Vuex.Store({
       const fetchData = async () => {
         try {
           const result = await fetch(
-            'https://api.collegefootballdata.com/teams/fbs',
+            '/cors-proxy/https://api.collegefootballdata.com/teams/fbs',
             {
               headers: {
                 Authorization: 'Bearer ' + process.env.VUE_APP_API_KEY,
