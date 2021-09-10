@@ -1,18 +1,23 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from 'vue';
+import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    teams: []
+    teams: [],
   },
   mutations: {
     fetchTeams(state) {
       const fetchData = async () => {
         try {
           const result = await fetch(
-            "https://api.collegefootballdata.com/teams/fbs"
+            'https://api.collegefootballdata.com/teams/fbs',
+            {
+              headers: {
+                Authorization: 'Bearer ' + process.env.VUE_APP_API_KEY,
+              },
+            },
           );
           const data = await result.json();
           state.teams = data;
@@ -21,8 +26,8 @@ export default new Vuex.Store({
         }
       };
       fetchData();
-    }
+    },
   },
   actions: {},
-  modules: {}
+  modules: {},
 });
