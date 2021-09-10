@@ -16,9 +16,7 @@ export default new Vuex.Store({
             {
               headers: {
                 Authorization: 'Bearer ' + process.env.VUE_APP_API_KEY,
-                'Access-Control-Allow-Origin': '*',
               },
-              mode: 'no-cors',
             },
           );
           const data = await result.json();
