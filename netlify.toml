@@ -1,3 +1,6 @@
+[[build]]
+  functions="netlify_functions"
+
 [[redirects]]
   from = "/cors-proxy/*"
   to = ":splat"
