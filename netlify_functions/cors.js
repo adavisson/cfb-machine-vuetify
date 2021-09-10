@@ -1,5 +1,6 @@
 exports.handler = async (event, context) => {
   let url = event.path.split('.netlify/functions/cors/')[1];
+  console.log(url);
   url = decodeURIComponent(url);
   url = new URL(url);
 
@@ -24,7 +25,7 @@ exports.handler = async (event, context) => {
   }
 
   const resp = await fetch(url, options);
-  const resp_json = resp.json();
+  const resp_json = resp.text();
   const headers = resp.headers.raw();
 
   return {
