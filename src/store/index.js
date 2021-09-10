@@ -12,7 +12,7 @@ export default new Vuex.Store({
       const fetchData = async () => {
         try {
           const result = await fetch(
-            '/.netlify/function/cors/https://api.collegefootballdata.com/teams/fbs',
+            '/api/https://api.collegefootballdata.com/teams/fbs',
             {
               headers: {
                 Authorization: 'Bearer ' + process.env.VUE_APP_API_KEY,
