@@ -2,4 +2,6 @@
   functions="netlify_functions"
 
 [[redirects]]
-  /api/*  https://api.example.com/:splat  200
+  from=/api/*
+  to=https://api.example.com/:splat
+  status=200
