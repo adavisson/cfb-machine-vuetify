@@ -43,7 +43,12 @@ export default {
     async fetchData() {
       try {
         const result = await fetch(
-          `https://api.collegefootballdata.com/teams/matchup?team1=${this.firstTeam}&team2=${this.secondTeam}`
+          `https://api.collegefootballdata.com/teams/matchup?team1=${this.firstTeam}&team2=${this.secondTeam}`,
+          {
+            headers: {
+              Authorization: "Bearer " + process.env.VUE_APP_API_KEY
+            }
+          }
         );
         const data = await result.json();
         data.games.sort((a, b) => (a.season < b.season ? 1 : -1));

@@ -60,7 +60,12 @@ export default {
     async fetchData() {
       try {
         const result = await fetch(
-          `https://api.collegefootballdata.com/roster?team=${this.team}`
+          `https://api.collegefootballdata.com/roster?team=${this.team}`,
+          {
+            headers: {
+              Authorization: "Bearer " + process.env.VUE_APP_API_KEY
+            }
+          }
         );
         const data = await result.json();
         this.roster = data;
